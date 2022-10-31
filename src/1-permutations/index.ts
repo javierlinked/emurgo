@@ -1,11 +1,10 @@
-// given a string with characters 0, 1 and *, return all possible combinations of 0 and 1
-// for example, given '11*00*' return ['110000', '110001', '111000', '111001']
+// LOG
+// O(2^n) time complexity
 
 export const getPermutations = (input: string): string[] => {
   const results: string[] = []
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const recurse = (index: number, current: string) => {
+  const recurse = (index: number, current: string): void => {
     if (index === input.length) {
       results.push(current)
       return
